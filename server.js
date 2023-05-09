@@ -18,3 +18,16 @@ app.post("/api/cars", (req, res) => {
   console.log(brand);
   res.send("Car Submitted Sucessfully");
 });
+
+const mongoose = require("mongoose");
+mongoose
+  .connect("mongodb://127.0.0.1:27017/myDatabase", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connection Sucessful");
+  })
+  .catch((error) => {
+    console.log("Recived an Error");
+  });
